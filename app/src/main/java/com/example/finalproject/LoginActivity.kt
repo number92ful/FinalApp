@@ -2,24 +2,24 @@ package com.example.finalproject
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.finalproject.databinding.ActivityLoginBinding
 
 class LoginActivity: AppCompatActivity() {
     //when activity is open onCreate executes the commands.
+    //Create binding
+    private lateinit var binding: ActivityLoginBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //Set Binding to Activity Login
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
-        setContentView(R.layout.activity_login)
-        //VARIABLES for username, password, backbutton, signupbutton
-        val username = findViewById<EditText>(R.id.username)
-        val password = findViewById<EditText>(R.id.password)
-        val backbutton = findViewById<Button>(R.id.button2)
-        val signupbutton = findViewById<Button>(R.id.login)
         //Email takes anything with @gmail.com, and password takes anything at, at least 8 characters minimum, only lowercase letters.
-        signupbutton.setOnClickListener { if( !username.text.contains("@gmail.com") || password.text.length<8){
+        binding.login.setOnClickListener { if( !binding.username.text.contains("@gmail.com") || binding.password.text.length<8){
             //if login or password info not correct, message will pop up to say "Your login information is not correct."
             Toast.makeText(this, "Your login information is not correct.", Toast.LENGTH_SHORT).show()
         }
@@ -29,4 +29,4 @@ class LoginActivity: AppCompatActivity() {
         }
         }
         //Closing the loginActivity.kt
-        backbutton.setOnClickListener { this.finish() }}}
+        binding.backtomain.setOnClickListener { this.finish() }}}

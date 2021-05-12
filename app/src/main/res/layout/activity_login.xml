@@ -23,7 +23,8 @@
         android:textColor="#F2000000"
         app:layout_constraintEnd_toEndOf="@+id/password"
         app:layout_constraintStart_toStartOf="@+id/password"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        android:autofillHints="" />
 <!-- Password takes anything with at least 8 letters (numbers, symbols, Caps not included-->
     <EditText
         android:id="@+id/password"
@@ -37,22 +38,25 @@
         android:inputType="textPassword"
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username" />
+        app:layout_constraintTop_toBottomOf="@+id/username"
+        android:autofillHints="" />
 <!-- Login Button -->
+    <!-- Image #2-->
+
     <Button
         android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:layout_marginTop="71dp"
-        android:layout_marginEnd="136dp"
         android:layout_marginBottom="72dp"
         android:text="@string/action_sign_in"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/backtomain"
+        app:layout_constraintEnd_toStartOf="@+id/backtomain"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password"
-        app:layout_constraintVertical_bias="0.312" />
-<!-- Image #2-->
+        app:layout_constraintVertical_bias="0.076" />
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
@@ -61,16 +65,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/index2" />
+        app:srcCompat="@drawable/index2"
+        android:contentDescription="@string/todo" />
 <!-- Back button leads to Activity_page_one.xml -->
     <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="14dp"
+        android:id="@+id/backtomain"
+        android:layout_width="95dp"
+        android:layout_height="49dp"
+        android:layout_marginEnd="100dp"
         android:text="@string/back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/login"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="536dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
